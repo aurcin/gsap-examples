@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script defer src="../../js/examples/basic/2.js"></script>
+
+    <link rel="stylesheet" href="../../css/style.css" />
+
+    <title>Basic examples</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Variables</h1>
+      <h2 class="subtitle">xPercent, yPercent</h2>
+      <code class="code"
+        >gsap.to('.cube', { duration: 2, xPercent: 500 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="1"></div>
+      </div>
+      <p class="description">
+        Tells gsap to animate element with class cube moving it from 500%
+        translated on x for its initial position
+      </p>
+
+      <h2 class="subtitle">rotation, rotationX, rotationY</h2>
+      <code class="code"
+        >gsap.to('.cube', { duration: 3, rotation: 360 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="2"></div>
+      </div>
+      <p class="description">Rotates the cube by 360 deg over 3 seconds</p>
+      <code class="code"
+        >gsap.to('.cube', { duration: 3, rotationX: 360 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="21"></div>
+      </div>
+      <p class="description">
+        Rotates the cube by 360 deg on x axis over 3 seconds
+      </p>
+      <code class="code"
+        >gsap.to('.cube', { duration: 3, rotationY: 360 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="22"></div>
+      </div>
+      <p class="description">
+        Rotates the cube by 360deg on y axis over 3 seconds
+      </p>
+
+      <h2 class="subtitle">scale, scaleX, scaleY</h2>
+      <code class="code">gsap.to('.cube', { duration: 2, scale: 0.5 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="3"></div>
+      </div>
+      <p class="description">Scales the cube by half over 2 seconds</p>
+
+      <code class="code">gsap.to('.cube', { duration: 2, scaleX: 0.5 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="31"></div>
+      </div>
+      <p class="description">
+        Scales the cube by half on x axis over 2 seconds
+      </p>
+
+      <code class="code">gsap.to('.cube', { duration: 2, scaleY: 0.5 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="32"></div>
+      </div>
+      <p class="description">
+        Scales the cube by half on y axis over 2 seconds
+      </p>
+
+      <h2 class="subtitle">transformOrigin</h2>
+      <code class="code"
+        >gsap.set('.cube', { scale: 0.4, yPercent: -50, xPercent: 50 });<br />
+        gsap.to('.cube', { duration: 3, rotation: 360, transformOrigin: '0%
+        100%' });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="4"></div>
+      </div>
+      <p class="description">
+        First we scale cube and move to starting postion, then we rotating it on
+        bottom left corner, by seting transform origin
+      </p>
+
+      <h2 class="subtitle">skewX, skewY</h2>
+      <code class="code"
+        >gsap.fromTo('.cube, { x: 100 }, { duration: 2, skewX: -45 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="5"></div>
+      </div>
+      <p class="description">
+        First we move cube on it x by 100px, then we skew it by 45 deg on x axis
+      </p>
+
+      <code class="code"
+        >gsap.fromTo( '.cube', { scale: 0.5 }, { duration: 2, skewY: -45 }
+        );</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="51"></div>
+      </div>
+      <p class="description">
+        First we scale cube a bit then we skew it by 45 deg on y axis
+      </p>
+    </section>
+  </body>
+</html>

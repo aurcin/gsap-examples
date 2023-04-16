@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script defer src="../../js/examples/basic/3.js"></script>
+
+    <link rel="stylesheet" href="../../css/style.css" />
+
+    <title>Basic examples</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Units</h1>
+      <h2 class="subtitle">default - pixels</h2>
+      <code class="code">gsap.to('.cube', { duration: 2, x: 300 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="1"></div>
+      </div>
+      <p class="description">
+        Moves cube on x axis by its default units - pixels
+      </p>
+
+      <h2 class="subtitle">Relative values '=+' and so on</h2>
+      <code class="code">gsap.to('.cube', { duration: 2, x: '+=300' });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="2"></div>
+      </div>
+      <p class="description">
+        Moves cube on x axis adding 300px to its current position
+      </p>
+
+      <h2 class="subtitle">Other units as a string</h2>
+      <code class="code">gsap.to('.cube', { duration: 2, x: '20vw' });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="3"></div>
+      </div>
+      <p class="description">Moves cube on x axis by 20 viewport width unit</p>
+
+      <h2 class="subtitle">Function</h2>
+      <code class="code"
+        >gsap.to('.cube', { duration: 2, x: () => Math.random() * 300 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="4"></div>
+      </div>
+      <p class="description">
+        Moves cube on x axis by random number 0 to 299. px
+      </p>
+    </section>
+  </body>
+</html>
