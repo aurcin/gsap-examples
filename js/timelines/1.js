@@ -180,3 +180,69 @@ timeline4.to('.container2', {
   transformOrigin: '50% 43%',
   ease: Power0.easeNone,
 });
+
+const timeline5 = gsap.timeline({ repeat: -1 });
+timeline5.to(
+  '.cube[data-cube="5"]',
+  {
+    duration: 3,
+    x: 645,
+     ease:'linear'
+  },
+);
+timeline5.addLabel('mid')
+
+timeline5.to(
+  '.cube[data-cube="51"]',
+  {
+    duration: 3,
+    x: 645,
+     ease:'linear'
+  },
+  '<+0.5'
+);
+
+timeline5.to(
+  '.cube[data-cube="52"]',
+  {
+    duration: 3,
+    x: 645,
+     ease:'linear'
+  },
+  '>-0.5'
+);
+
+timeline5.to(
+  '.cube[data-cube="53"]',
+  {
+    duration: 3,
+    x: 645,
+     ease:'linear'
+  },
+  '>-0.5'
+);
+
+timeline5.to(
+  '.cube[data-cube="54"]',
+  {
+    duration: 3,
+    x: 645,
+     ease:'linear'
+  },
+  'mid+=0.5'
+);
+
+timeline5.to(
+  '.cube[data-cube="55"]',
+  {
+    duration: 3,
+    x: 645,
+     ease:'linear'
+  },
+  'mid'
+);
+
+const timeline6 = gsap.timeline({ repeat: -1, yoyo:true, repeatDelay:1 });
+timeline6.to(  '.cube[data-cube="6"]',{duration:1, scale:.5})
+timeline6.to(  '.cube[data-cube="61"]',{duration:1, scale:.5})
+timeline6.to(  '.cube[data-cube="62"]',{duration:1, scale:.5})
