@@ -1,4 +1,7 @@
 const MAX_SIZE = 1500;
+const switcher = document.querySelector('#switch');
+
+switcher.addEventListener('click', onSwitch);
 
 const anim = gsap.to('.box', {
   scale: MAX_SIZE,
@@ -30,11 +33,6 @@ function updateZIndex() {
   }
 }
 
-const switcher = document.querySelector('#switch');
-let isLightOn;
-
-switcher.addEventListener('click', onSwitch);
-
 function onSwitch() {
   gsap.fromTo(
     switcher,
@@ -44,6 +42,11 @@ function onSwitch() {
   if (anim.isActive()) {
     anim.seek(0).pause();
   } else {
+    gsap.set('.box', {
+      css: {
+        zIndex: 0,
+      },
+    });
     anim.resume();
   }
 }
