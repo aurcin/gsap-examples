@@ -18,18 +18,38 @@
   </head>
   <body>
     <section class="example-group">
-      <h1 class="title">Very basic example</h1>
+      <h1 class="title">trigger and toggleActions</h1>
 
       <code>gsap.to('.cube', {</code><br />
-      <code>&nbsp;&nbsp;scrollTrigger: '.cube',</code><br />
-      <code> &nbsp;&nbsp;x: 400,</code><br />
-      <code> &nbsp;&nbsp;rotation: 360,</code><br />
+      <code>&nbsp;&nbsp;scrollTrigger: {</code><br />
+      <code>&nbsp;&nbsp;&nbsp;&nbsp;trigger: '.cube',</code><br />
+      <code>
+        &nbsp;&nbsp;&nbsp;&nbsp;toggleActions: 'restart pause reverse
+        pause',</code
+      ><br />
+      <code> &nbsp;&nbsp; },</code><br />
+      <code> &nbsp;&nbsp; x: 400,</code><br />
+      <code> &nbsp;&nbsp; rotation: 360,</code><br />
       <code> &nbsp;&nbsp;duration: 3,</code><br />
       <code>});</code>
 
       <p class="description">
-        Each cube has animation moves it by 400px on x axis and rotates over 3
-        seconds. This animatiosn triggers only when cube gets scrolled to
+        toggleActions is combination of 4 keywords, where each keyword can be
+        either:
+      </p>
+      <ul>
+        <li><b>play</b>, basic, just plays when triggered</li>
+        <li><b>pause</b></li>
+        <li><b>resume</b></li>
+        <li><b>reverse</b></li>
+        <li><b>restart</b>, restarts each time is triggered</li>
+        <li><b>reset</b></li>
+        <li><b>complete</b></li>
+        <li><b>none</b></li>
+      </ul>
+      <p>
+        Each of 4 positions means: "when enter" "when going past" "when
+        returning in" "when we all the way back to start"
       </p>
 
       <div class="cube" data-cube="1"></div>
