@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+  padding-left: 2em;
+}
+
+ol {
+  padding-left: 2em;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -71,4 +80,13 @@ body {
 
 .center {
   text-align: center;
+}
+
+.navigation-container {
+  margin-top: 2em;
+
+  display: flex;
+  gap: 2em;
+
+  justify-content: center;
 }

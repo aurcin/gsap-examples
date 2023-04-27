@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="../../style.css" />
+
+    <title>Basic examples</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Timelines</h1>
+      <h2 class="subtitle">Basic</h2>
+      <code>const timeline = gsap.timeline();</code><br />
+      <code>timeline.to('.cube1', { duration: 1, x: 300 });</code><br />
+      <code>timeline.to('.cube2', { duration: 1, x: 300 });</code><br />
+      <code>timeline.to('.cube3', { duration: 1, x: 300 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="11"></div>
+        <div class="cube" data-cube="12"></div>
+      </div>
+      <p class="description">
+        Tells gsap to animate 3 cubes, one after another each moving by 300px
+        along x axis over 1second
+      </p>
+
+      <h2 class="subtitle">timeline delay</h2>
+      <code class="code"
+        >timeline2.to( '.cube', { duration: 1, x: 355, ease: Bounce.easeOut, },
+        '-=.5' );</code
+      >
+      <p>Only a piece of code</p>
+
+      <div class="example-container">
+        <div class="container1">
+          <div class="cube" data-cube="2"></div>
+          <div class="cube" data-cube="21"></div>
+          <div class="cube" data-cube="22"></div>
+          <div class="cube" data-cube="23"></div>
+          <div class="cube" data-cube="24"></div>
+          <div class="cube" data-cube="25"></div>
+        </div>
+      </div>
+      <p class="description">
+        Last parameter is used for delay, you can write number or string with
+        relative change. In code above, we set delay a half second before
+        previous animation ends.
+      </p>
+
+      <h2 class="subtitle">Adding labels</h2>
+      <code>timeline3.addLabel('end');</code><br />
+      <code>timeline3.to( '.cube', { x: 600, duration: 2, }, 'end' );</code
+      ><br />
+
+      <div class="example-container">
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="31"></div>
+        <div class="cube" data-cube="32"></div>
+        <div class="cube" data-cube="33"></div>
+      </div>
+      <p class="description">
+        First line adds label to animation time, second line uses that label to
+        start animation
+      </p>
+
+      <h2 class="subtitle">timeline repeat</h2>
+      <code class="code"
+        >const timeline4 = gsap.timeline({ yoyo: true, repeat: -1 });</code
+      >
+      <p>Only a piece of code</p>
+
+      <div class="example-container">
+        <div class="container2">
+          <div class="cube" data-cube="4"></div>
+          <div class="cube" data-cube="41"></div>
+          <div class="cube" data-cube="42"></div>
+          <div class="cube" data-cube="43"></div>
+          <div class="cube" data-cube="44"></div>
+          <div class="cube" data-cube="45"></div>
+        </div>
+      </div>
+      <p class="description">
+        We adding infinite repeats to timeline, playing animation forward then
+        backward
+      </p>
+
+      <h2 class="subtitle">position parameter</h2>
+      <code class="code"
+        >timeline5.to( '.cube', { duration: 3, x: 645, ease:'linear' }, '<+0.5'
+        )</code
+      >
+      <p>
+        Only a piece of code, mid is label that added after 1st animation done
+      </p>
+      <div class="example-container">
+        <div class="container3">
+          <div class="cube" data-cube="5"></div>
+          <div class="cube" data-cube="51"><+0.5</div>
+          <div class="cube" data-cube="52">>-0.5</div>
+          <div class="cube" data-cube="53">>-0.5'</div>
+          <div class="cube" data-cube="54">mid+=0.5</div>
+          <div class="cube" data-cube="55">mid</div>
+        </div>
+      </div>
+      <p class="description">
+        '<' means start of previous animation and '>' means end. We also can add
+        or substract number from that time '<+1' sets 1 second after start and
+        so on
+      </p>
+
+      <h2 class="subtitle">repeatDelay</h2>
+      <code class="code"
+        >gsap.timeline({ repeat: -1, yoyo:true, repeatDelay:1 });</code
+      >
+      <p>
+        Only a piece of code, mid is label that added after 1st animation done
+      </p>
+      <div class="example-container">
+        <div>
+          <div class="cube" data-cube="6"></div>
+          <div class="cube" data-cube="61"></div>
+          <div class="cube" data-cube="62"></div>
+        </div>
+      </div>
+      <p class="description">
+        Here repeatDelay: 1 means to animation pauses for 1 sec between each
+        repeats
+      </p>
+    </section>
+  </body>
+</html>
