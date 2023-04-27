@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="../../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Basic examples</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Very basic example</h1>
+
+      <code>gsap.to('.cube', {</code><br />
+      <code>&nbsp;&nbsp;scrollTrigger: '.cube',</code><br />
+      <code> &nbsp;&nbsp;x: 400,</code><br />
+      <code> &nbsp;&nbsp;rotation: 360,</code><br />
+      <code> &nbsp;&nbsp;duration: 3,</code><br />
+      <code>});</code>
+
+      <p class="description">
+        Each cube has animation moves it by 400px on x axis and rotates over 3
+        seconds. This animatiosn triggers only when cube gets scrolled to
+      </p>
+
+      <div class="cube" data-cube="1"></div>
+      <div class="cube" data-cube="11"></div>
+      <div class="cube" data-cube="12"></div>
+      <div class="cube" data-cube="13"></div>
+      <div class="cube" data-cube="14"></div>
+    </section>
+  </body>
+</html>
