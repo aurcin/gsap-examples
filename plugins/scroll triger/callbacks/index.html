@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="../../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Scroll trigger</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Callbacks</h1>
+
+      <h2 class="subtitle">onEnter, onLeave, onEnterBack, onLeaveBack</h2>
+      <p class="description">
+        There are various cllbacks we can use on scroll trigger like onEnter,
+        onLeave, onenterBack, onLeaveBack
+      </p>
+      <br />
+      <code>
+        <pre>
+          ScrollTrigger.create({
+            trigger: '.cube',
+            start: 'top center',
+            end: 'bottom center',
+            onEnter: () => console.log('entered'),
+            onLeave: () => console.log('leaved'),
+            onEnterBack: () => console.log('entered back'),
+            onLeaveBack: () => console.log('leaved back'),
+          });
+        </pre>
+      </code>
+
+      <h2 class="subtitle">onUpdate</h2>
+      <p class="description">
+        There is another callback onUpdate which is fired on every update, and
+        callback receives self as parameter, where we can reach attributes like
+        progress
+      </p>
+      <br />
+      <code>
+        <pre>
+          ScrollTrigger.create({
+            trigger: '.cube',
+            start: 'top center',
+            end: 'bottom center',
+            onUpdate: (self) => console.log('updating', self.progress),
+          });
+        </pre>
+      </code>
+
+      <h2 class="subtitle">onToggle</h2>
+      <p class="description">
+        Callback onToggle which is fired on every time it enters or leaves
+        trigger, and callback receives self as parameter, where we can reach
+        attributes like isActive
+      </p>
+      <br />
+      <code>
+        <pre>
+          ScrollTrigger.create({
+            trigger: '.cube',
+            start: 'top center',
+            end: 'bottom center',
+            onToggle: (self) => console.log('toggled', self.isActive),
+          });
+        </pre>
+      </code>
+
+      <h2 class="subtitle">toggleClass</h2>
+      <p class="description">
+        toggleClass is fired when trigger changes, if enters it adds class if
+        leaves it removes a class
+      </p>
+      <br />
+      <code>
+        <pre>
+          ScrollTrigger.create({
+            trigger: '.cube',
+            start: 'top center',
+            end: 'bottom center',
+            toggleClass: 'active',
+          });
+        </pre>
+      </code>
+
+      <div class="cube" data-cube="1"></div>
+      <div class="cube" data-cube="11"></div>
+      <div class="cube" data-cube="12"></div>
+      <div class="cube" data-cube="13"></div>
+      <div class="cube" data-cube="14"></div>
+    </section>
+  </body>
+</html>

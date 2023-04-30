@@ -18,15 +18,11 @@
   </head>
   <body>
     <section class="example-group">
-      <h1 class="title">Scrub</h1>
+      <h1 class="title">Snapping</h1>
 
-      <p class="description">
-        Scrub makes animation go full cycle where start marker means animation
-        start and end animation end, so scrolling 20% from start puts us to 1/5
-        of timeline
-      </p>
+      <p class="description">We can snap elements by using snap: number</p>
       <br />
-      <code>
+      <!-- <code>
         <pre>
           gsap.to('.cube', {
             scrollTrigger: {
@@ -34,34 +30,15 @@
               start: 'top 80%',
               end: 'bottom 20%',
               scrub: true,
+              pin: '.cube',
+              markers: true,
             },
             x: 400,
             rotation: 360,
             duration: 3,
           });
         </pre>
-      </code>
-
-      <p class="description">
-        Passing number in scrub instead of boolean value, gives as much time for
-        aniamtion to chatch up.
-      </p>
-      <br />
-      <code>
-        <pre>
-          gsap.to('.cube', {
-            scrollTrigger: {
-              trigger: '.cube',
-              start: 'top 80%',
-              end: 'bottom 20%',
-              scrub: 1,
-            },
-            x: 400,
-            rotation: 360,
-            duration: 3,
-          });
-        </pre>
-      </code>
+      </code> -->
 
       <div class="cube" data-cube="1"></div>
       <div class="cube" data-cube="11"></div>
