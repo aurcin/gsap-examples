@@ -1,0 +1,73 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+}
+
+.container {
+  background-color: aquamarine;
+  width: 600px;
+  height: 600px;
+}
+
+.pencil {
+  position: relative;
+
+  width: 120px;
+  height: 300px;
+
+  overflow-x: hidden;
+}
+
+.color {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 50px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.color::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #aa8656;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: -25px;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.tip {
+  width: 120px;
+  height: 120px;
+
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+
+  border-top: 120px solid #aa8656;
+}
