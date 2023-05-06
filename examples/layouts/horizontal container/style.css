@@ -13,16 +13,12 @@
   --index-foreground: 1;
   --index-midground: auto;
   --index-background: -1;
-
-  /* overflow: hidden; */
 }
 
 body {
   color: var(--color-light);
   background-color: var(--color-dark);
   font-family: 'Inter', sans-serif;
-
-  overflow-x: hidden;
 }
 
 .header {
@@ -43,6 +39,10 @@ body {
 
 .link {
   color: var(--color-light);
+}
+
+.wrapper {
+  overflow-x: hidden;
 }
 
 .pages {
