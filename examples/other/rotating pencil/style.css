@@ -2,8 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   min-height: 100vh;
+
+  --stripe-width: 60px;
+  --stripe-height: 400px;
+
+  --stripes-count: 3;
+  --pencil-width: calc(var(--stripe-width) * var(--stripes-count));
 }
 
 .container {
@@ -12,34 +17,32 @@
   height: 600px;
 }
 
-.pencil {
+.base {
   position: relative;
-
-  width: 120px;
-  height: 300px;
-
-  overflow-x: hidden;
+  width: var(--pencil-width);
+  height: var(--stripe-height);
+  overflow: hidden;
 }
 
-.color {
+.stripe {
   position: absolute;
-  left: -50px;
+  left: calc(var(--stripe-width) * -1);
   top: 0;
-  width: 50px;
-  height: 200px;
+  width: var(--stripe-width);
+  height: var(--stripe-height);
   flex-shrink: 0;
 }
 
-.color::after {
+.stripe::after {
   content: '';
   display: block;
-  width: 50px;
-  height: 50px;
-  background-color: #aa8656;
+  width: var(--stripe-width);
+  height: var(--stripe-width);
+  background-color: beige;
   border-radius: 50%;
 
   position: absolute;
-  bottom: -25px;
+  bottom: calc(var(--stripe-width) / 2 * -1);
 }
 
 .red {
@@ -59,15 +62,25 @@
 }
 
 .tip {
-  width: 120px;
-  height: 120px;
+  position: relative;
+  width: var(--pencil-width);
+  height: var(--pencil-width);
 
+  border-left: calc(var(--pencil-width) / 2) solid transparent;
+  border-right: calc(var(--pencil-width) / 2) solid transparent;
+
+  border-top: var(--pencil-width) solid beige;
+}
+
+.black {
+  --width: calc(var(--stripe-width) / 3);
   position: absolute;
-  bottom: -20px;
-  left: 0;
+  bottom: 0px;
+  left: 50%;
 
-  border-left: 60px solid transparent;
-  border-right: 60px solid transparent;
+  transform: translateX(-50%);
+  width: var(--width);
+  height: var(--width);
 
-  border-top: 120px solid #aa8656;
+  background-color: black;
 }

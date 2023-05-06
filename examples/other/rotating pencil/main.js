@@ -1,11 +1,12 @@
-const timeline = gsap.timeline();
+const stripes = gsap.utils.toArray('.stripe');
+const stripeLength = stripes[0].offsetWidth;
 
-timeline
+gsap
   .fromTo(
-    '.color',
+    '.stripe',
     { x: 0 },
     {
-      x: 200,
+      x: stripeLength * stripes.length,
       duration: 3,
       repeat: -1,
       ease: 'none',
@@ -16,3 +17,6 @@ timeline
     }
   )
   .seek(3);
+
+gsap.set('.pencil', { x: 200 });
+//gsap.to('.pencil', { x: 350, duration: 2 });
