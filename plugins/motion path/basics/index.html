@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="../../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Motion Path</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Very basic example</h1>
+
+      <p class="description">
+        To set a path we can use selector or we can use curves string, or even
+        array of point coordinates
+      </p>
+      <br />
+
+      <code>
+        <pre>
+gsap.to('.cube', {
+  duration: 5,
+  repeat: -1,
+  yoyo: true,
+  motionPath:
+    'M.36,89.63C80.64,4.35,110.81-4.89, ...',
+});
+        </pre>
+      </code>
+
+      <p class="description">Example above uses curve string</p>
+
+      <div class="example-container container">
+        <div class="cube" data-cube="1"></div>
+      </div>
+
+      <h2 class="subtitle">Autorotate</h2>
+      <p class="description">
+        Autorotate true, forces object to rotate along path curve
+      </p>
+      <br />
+
+      <code>
+        <pre>
+gsap.to('.cube', {
+  duration: 5,
+  repeat: -1,
+  yoyo: true,
+  motionPath: {
+    path: 'M.36,89.63C80.64,4.35,110.81-4.89,123.49,2.56c23.39,13.72-16.09,82.08,16.33, ...',
+    autoRotate: true,
+  },
+});
+        </pre>
+      </code>
+
+      <div class="example-container container">
+        <div class="cube" data-cube="2"></div>
+      </div>
+
+      <h2 class="subtitle">start, end</h2>
+      <p class="description">
+        We can limit where on path animation starts and where ends, by setting
+        start and end values, where 0 means path start, 0.25 means 1/4 of path.
+        We can go over and set end 1.5 for example, it means path will go full
+        and then repeats again half way
+      </p>
+      <br />
+
+      <code>
+        <pre>
+gsap.to('.cube', {
+  duration: 5,
+  repeat: -1,
+  yoyo: true,
+  motionPath: {
+    path: 'M.36,89.63C80.64,4.35,110.81-4.89,123.49,2.56c23.39,13.72-16.09,82.08,16.33, ...',
+    autoRotate: true,
+    start: 0.33,
+    end: 0.66,
+  },
+});
+        </pre>
+      </code>
+
+      <div class="example-container container">
+        <div class="cube" data-cube="3"></div>
+      </div>
+    </section>
+  </body>
+</html>
