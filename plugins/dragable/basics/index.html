@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="../../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Dragable</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Very basic example</h1>
+
+      <p class="description">
+        We can simply make element dragable just selecting element and bounds
+      </p>
+      <br />
+
+      <code>
+        <pre>
+Draggable.create('.cube', { bounds: '.container' });
+        </pre>
+      </code>
+
+      <p class="description">
+        We can change type to make object rotateble instead dragable
+      </p>
+      <br />
+
+      <code>
+        <pre>
+Draggable.create('.cube', {
+  bounds: '.container',
+  type: 'rotation',
+});
+        </pre>
+      </code>
+
+      <div class="example-container container" data-index="1">
+        <div class="cube" data-cube="1">Drag</div>
+        <div class="cube" data-cube="11">Rotate</div>
+      </div>
+
+      <h2 class="subtitle">limiting by axis</h2>
+
+      <p class="description">
+        To limit drag on x or y axis we can set the type as x or y
+      </p>
+      <br />
+
+      <code>
+        <pre>
+Draggable.create('.cube', {
+  type: 'y',
+  bounds: '.container',
+});
+        </pre>
+      </code>
+
+      <div class="example-container container" data-index="2">
+        <div class="cube" data-cube="2">y</div>
+        <div class="cube" data-cube="21">x</div>
+        <div class="cube" data-cube="22">x,y</div>
+      </div>
+    </section>
+  </body>
+</html>
