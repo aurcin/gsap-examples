@@ -91,3 +91,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.mt-1 {
+  margin-top: 1em;
+}
