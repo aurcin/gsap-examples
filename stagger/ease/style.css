@@ -1,0 +1,11 @@
+.example-container {
+  display: flex;
+  height: 300px;
+  gap: 1px;
+  align-items: flex-end;
+}
+
+.cube {
+  width: 7px;
+  height: 7px;
+}

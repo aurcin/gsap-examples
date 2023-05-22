@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Stagger</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Easing</h1>
+
+      <p class="description">We can use ease to controll stagger animation</p>
+      <pre><code class="code">
+gsap.to('.cube', {
+  duration: 2,
+  height: 250,
+  repeat: -1,
+  repeatDelay: 1,
+  stagger: {
+    amount: 5,
+    ease: 'power2',
+  },
+});
+      </code></pre>
+
+      <p class="description">
+        Means there is half second between each animation. We have more
+        controlls if we pass object insted of just number. To set interwals in
+        object we use <b>each</b> property. We can also use
+        <b>amount</b> instead each, amount means how much time we have for all
+        staggers where each means delay between every animation
+      </p>
+
+      <div class="example-container">
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="1"></div>
+      </div>
+      <p class="description">power2 easing</p>
+
+      <div class="example-container">
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+        <div class="cube" data-cube="2"></div>
+      </div>
+      <p class="description">power4 easing</p>
+
+      <div class="example-container">
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+        <div class="cube" data-cube="3"></div>
+      </div>
+      <p class="description">power4.in easing</p>
+    </section>
+  </body>
+</html>
