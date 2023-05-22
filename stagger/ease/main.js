@@ -27,6 +27,6 @@ gsap.to('.cube[data-cube="3"]', {
   repeatDelay: 1,
   stagger: {
     amount: 5,
-    ease: 'power4.inOut',
+    ease: 'power4.in',
   },
 });

@@ -1,0 +1,16 @@
+.cube {
+  margin: 5px;
+  background-color: rgb(226, 208, 43);
+}
+
+.example-container > div:first-child {
+  background-color: rgb(226, 43, 180);
+}
+
+.example-container > div:nth-child(2) {
+  background-color: rgb(58, 226, 43);
+}
+
+.example-container > div:last-child {
+  background-color: rgb(43, 183, 226);
+}

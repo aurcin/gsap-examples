@@ -89,8 +89,12 @@
         <div class="cube" data-cube="4"></div>
       </div>
       <p class="description">
-        First we scale cube and move to starting postion, then we rotating it on
-        bottom left corner, by seting transform origin
+        By default elements will transform around their origin. To set origin we
+        use transformOrigin property. We can use
+        <b>percent</b>
+        values '10% 20%', <b>pixels</b> '10px 20px' or <b>keywords</b> 'left
+        bottom. The first value is always horizontal position, then vertical.
+        Transfor origin can be outside of element
       </p>
 
       <h2 class="subtitle">skewX, skewY</h2>
