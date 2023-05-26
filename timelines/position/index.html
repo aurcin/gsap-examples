@@ -41,9 +41,9 @@ timeline
       </code></pre>
 
       <div class="example-container">
-        <div class="cube" data-cube="10"></div>
+        <div class="cube" data-cube="10">2</div>
         <div class="cube" data-cube="11"></div>
-        <div class="cube" data-cube="12"></div>
+        <div class="cube" data-cube="12">1</div>
         <div class="cube" data-cube="13"></div>
       </div>
       <p class="description">
@@ -57,6 +57,75 @@ timeline
       <p class="description">
         Note that last cube tween doesn't start after yellow cube tween, which
         ends sooner, but awaits all previous tweens to finish.
+      </p>
+
+      <h2 class="subtitle">Relative +=, -=</h2>
+
+      <p class="description">
+        We can use <b>+=</b> and <b>-+</b> to move animation start time based on
+        previous tween end
+      </p>
+
+      <pre><code class="code">
+const timeline = gsap.timeline();
+
+timeline
+  .to('.cube', { x: 600, duration: 1 }, '+=1')
+  .to('.cube', { x: 600, duration: 1 }, '-=1')
+  .to('.cube', { x: 600, duration: 1 })
+  .to('.cube', { x: 600, duration: 1 }, '+=2');
+      </code></pre>
+
+      <div class="example-container">
+        <div class="cube" data-cube="20">+=1</div>
+        <div class="cube" data-cube="21">-=1</div>
+        <div class="cube" data-cube="22"></div>
+        <div class="cube" data-cube="23">+=2</div>
+      </div>
+
+      <h2 class="subtitle">Relative <, >, <+1, ...</h2>
+
+      <p class="description">
+        We can use <b><</b>, <b>></b> and combine them with numbers.
+        <b><</b> points at position of begining previous tween and <b>></b> to
+        end. And <b><0.5</b> Mens half second after previous start
+      </p>
+
+      <pre><code class="code">
+const timeline = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+
+timeline
+  .to('.cube', { x: 600, duration: 1 })
+  .to('.cube', { x: 600, duration: 1 }, '<-1')
+  .to('.cube', { x: 600, duration: 1 }, '>-.5')
+  .to('.cube', { x: 600, duration: 1 }, '<1');
+      </code></pre>
+
+      <div class="example-container">
+        <div class="cube" data-cube="30"></div>
+        <div class="cube" data-cube="31"><-1</div>
+        <div class="cube" data-cube="32">>-.5</div>
+        <div class="cube" data-cube="33"><1</div>
+      </div>
+
+      <h2 class="subtitle">Labels</h2>
+
+      <p class="description">
+        We can add label between the tweens by using <b>add</b> function. And
+        then control animation relative to label.
+      </p>
+
+      <div class="example-container">
+        <div class="cube" data-cube="40"></div>
+        <div class="cube" data-cube="41"></div>
+        <div class="cube" data-cube="42">start</div>
+        <div class="cube" data-cube="43">start+=.5</div>
+      </div>
+
+      <p class="description">
+        Here we add label at the start of timeline, and set the start of yellow
+        csquare tween same as start, and skyblue scuare a half second relative
+        to start
       </p>
     </section>
   </body>
