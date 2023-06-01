@@ -1,0 +1,37 @@
+main {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.card {
+  width: 100px;
+  height: 300px;
+  border-radius: 20px;
+
+  padding: 40px 50px;
+
+  background-color: orange;
+  overflow: hidden;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(355px, 5px);
+  background-color: red;
+  color: whitesmoke;
+  font-weight: 900;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
