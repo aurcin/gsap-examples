@@ -13,7 +13,11 @@ function animate(target) {
   gsap.set(border, { scaleX: 0 });
 
   timeline
-    .to(link, { color: '#6eb5d6', y: -10, duration: 0.2 })
+    .to(link, {
+      color: '#6eb5d6',
+      y: -10,
+      ease: 'back.out(5)',
+    })
     .to(border, { backgroundColor: '#6eb5d6', scaleX: 1, duration: 0.5 }, 0);
 
   target.addEventListener('mouseenter', () => timeline.play());
