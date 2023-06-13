@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Basic examples</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Properties</h1>
+      <h2 class="subtitle">Duration</h2>
+      <code class="code">gsap.to('.cube', { duration: 2, x: 300 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="1"></div>
+      </div>
+      <p class="description">
+        Tells gsap to animate element with class cube moving it by 300px along x
+        axis over 2 seconds. If you don't set the duration, animations will use
+        default 0.5s duration then. We can override default duration:
+        <code>gsap.defaults({duration:value});</code>
+      </p>
+
+      <h2 class="subtitle">Delay</h2>
+      <code class="code"
+        >gsap.to('.cube', { duration: 2, delay: 1, x: 300 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="2"></div>
+      </div>
+      <p class="description">
+        Tells gsap to animate element with class cube moving it by 300px along x
+        axis over 2 seconds, but animation starts after 1 second delay
+      </p>
+
+      <h2 class="subtitle">Repeat</h2>
+      <code class="code"
+        >gsap.to('.cube', { duration: 2, delay: 1, repeat: 3, x: 300 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="3"></div>
+      </div>
+      <p class="description">
+        Tells gsap to animate element with class cube moving it by 300px along x
+        axis over 2 seconds, but animation starts after 1 second delay and
+        repeats animation 3 times. Note that first animation doesn't count to
+        repeat so (total 4), also delay is only before aniamtion start and
+        doesn't affect repeat animations
+      </p>
+
+      <h2 class="subtitle">Yoyo</h2>
+      <code class="code"
+        >gsap.to('.cube', { duration: 2, repeat: 3, yoyo: true, x: 300,
+        });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="4"></div>
+      </div>
+      <p class="description">
+        Tells gsap to animate element with class cube moving it by 300px along x
+        axis over 2 seconds, repeats animation 3 times. Yoyo tells to play
+        animation backwards-forwards.
+      </p>
+
+      <h2 class="subtitle">Stagger</h2>
+      <code class="code"
+        >gsap.to('.cube', { duration: 2, x: 300, stagger: 0.2 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="5"></div>
+        <div class="cube" data-cube="5"></div>
+        <div class="cube" data-cube="5"></div>
+      </div>
+      <p class="description">
+        Tells gsap to animate all elements with class cube, but each next
+        aniamtion is delayed by 0.2s
+      </p>
+
+      <code class="code"
+        >gsap.to('.cube', { duration: 3, x: 600, stagger: { each: 0.5, from: 2,
+        repeat: 2, }, });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="6"></div>
+        <div class="cube" data-cube="6"></div>
+        <div class="cube" data-cube="6"></div>
+        <div class="cube" data-cube="6"></div>
+        <div class="cube" data-cube="6"></div>
+        <div class="cube" data-cube="6"></div>
+        <div class="cube" data-cube="6"></div>
+        <div class="cube" data-cube="6"></div>
+        <div class="cube" data-cube="6"></div>
+      </div>
+      <p class="description">
+        Tells gsap to animate all elements with class cube, moving them by 600px
+        along x axis over 3 seconds. Ecah sets delay between each cube
+        animation. from sets index of from what cube of cube array to start
+        (index 2 means 3 cube starts, then after 0.5s 4 and 2 cube starts and so
+        on). Repeat in starger sets repeat to start imediatly after first
+        element ends it starts another and doesn't wait other elements.
+      </p>
+
+      <h2 class="subtitle">onComplete</h2>
+      <code class="code"
+        >gsap.to('.cube', { duration: 2, x: 300, onComplete: onCompleteHandler,
+        });</code
+      ><code
+        >function onCompleteHandler() {<br />&nbsp;&nbsp; gsap.to('.cube', {
+        duartion: 1, backgroundColor: '#ff00ff' });<br />
+        }
+      </code>
+      <div class="example-container">
+        <div class="cube" data-cube="7"></div>
+      </div>
+      <p class="description">
+        Tells gsap to animate element with class cube moving it by 300px along x
+        axis over 2 seconds, and on animation complete to start new animation
+        that changes cube color to pink over 1 second
+      </p>
+    </section>
+  </body>
+</html>

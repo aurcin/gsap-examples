@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Basic examples</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Direction</h1>
+      <p class="description">
+        We control animation flow by using gsap methods <b>to, from</b> and
+        <b>fromTo</b>. We can also set some properties using <b>set</b>
+      </p>
+
+      <h2 class="subtitle">to</h2>
+      <p class="description">Tweens from original properties to given values</p>
+      <code class="code">gsap.to('.cube', { duration: 2, x: 300 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="1"></div>
+      </div>
+      <p class="description">
+        Moves cube from current position by 300px along x-axis
+      </p>
+
+      <h2 class="subtitle">from</h2>
+      <p class="description">Tweens from given values to original properties</p>
+      <code class="code">gsap.from('.cube', { duration: 2, x: 300 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="2"></div>
+      </div>
+      <p class="description">
+        Moves cube from 300px along x-axis from its original position to its
+        original position
+      </p>
+
+      <h2 class="subtitle">fromTo</h2>
+      <p class="description">Tweens from values to values</p>
+      <code class="code"
+        >gsap.fromTo('.cube', { x: 150 }, { duration: 2, x: 300 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="3"></div>
+      </div>
+      <p class="description">
+        Here we animate cube from 150px to 300px on x-axis
+      </p>
+
+      <h2 class="subtitle">set</h2>
+      <p class="description">Sets values, without animations</p>
+      <code class="code">gsap.set('.cube', { x: 300 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="4"></div>
+      </div>
+      <p class="description">Sets x property of cube to 300</p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Timline</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Position</h1>
+
+      <p class="description">
+        We can control when which tween starts by seting position parameter. By
+        default each animation starts when previous ends.
+      </p>
+
+      <h2 class="subtitle">Exact time</h2>
+
+      <p class="description">
+        To add exact time we just pass a number as last parameter to each tween
+      </p>
+
+      <pre><code class="code">
+const timeline = gsap.timeline();
+
+timeline
+  .to('.pink', { x: 600, duration: 1 }, 2)
+  .to('.green', { x: 600, duration: 1 })
+  .to('.yellow', { x: 600, duration: 1 }, 1)
+  .to('.blue', { x: 600, duration: 1 });
+      </code></pre>
+
+      <div class="example-container">
+        <div class="cube" data-cube="10">2</div>
+        <div class="cube" data-cube="11"></div>
+        <div class="cube" data-cube="12">1</div>
+        <div class="cube" data-cube="13"></div>
+      </div>
+      <p class="description">
+        Here we move each cube by 600px along x axis. However we pass 2 to first
+        tween, which means it starts at 2 second, then green cube starts after
+        first tween finishes, beacause we do not pass any walue here. And we set
+        1 to yellow cube, which means it starts at 1 second (earlier than pink).
+        We don't set anything to last cube, so he starts after previous tweens
+        ends.
+      </p>
+      <p class="description">
+        Note that last cube tween doesn't start after yellow cube tween, which
+        ends sooner, but awaits all previous tweens to finish.
+      </p>
+
+      <h2 class="subtitle">Relative +=, -=</h2>
+
+      <p class="description">
+        We can use <b>+=</b> and <b>-+</b> to move animation start time based on
+        previous tween end
+      </p>
+
+      <pre><code class="code">
+const timeline = gsap.timeline();
+
+timeline
+  .to('.pink', { x: 600, duration: 1 }, '+=1')
+  .to('.green', { x: 600, duration: 1 }, '-=1')
+  .to('.yellow', { x: 600, duration: 1 })
+  .to('.blue', { x: 600, duration: 1 }, '+=2');
+      </code></pre>
+
+      <div class="example-container">
+        <div class="cube" data-cube="20">+=1</div>
+        <div class="cube" data-cube="21">-=1</div>
+        <div class="cube" data-cube="22"></div>
+        <div class="cube" data-cube="23">+=2</div>
+      </div>
+
+      <h2 class="subtitle">Relative <, >, <+1, ...</h2>
+
+      <p class="description">
+        We can use <b><</b>, <b>></b> and combine them with numbers.
+        <b><</b> points at position of begining previous tween and <b>></b> to
+        end. And <b><0.5</b> Mens half second after previous start
+      </p>
+
+      <pre><code class="code">
+const timeline = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+
+timeline
+  .to('.pink', { x: 600, duration: 1 })
+  .to('.green', { x: 600, duration: 1 }, '<-1')
+  .to('.yellow', { x: 600, duration: 1 }, '>-.5')
+  .to('.blue', { x: 600, duration: 1 }, '<1');
+      </code></pre>
+
+      <div class="example-container">
+        <div class="cube" data-cube="30"></div>
+        <div class="cube" data-cube="31"><-1</div>
+        <div class="cube" data-cube="32">>-.5</div>
+        <div class="cube" data-cube="33"><1</div>
+      </div>
+
+      <h2 class="subtitle">Labels</h2>
+
+      <p class="description">
+        We can add label between the tweens by using <b>add</b> function. And
+        then control animation relative to label.
+      </p>
+
+      <pre><code class="code">
+timeline
+  .add('start')
+  .to('.pink', { x: 600, duration: 1 })
+  .to('.green', { x: 600, duration: 1 })
+  .to('.yellow', { x: 600, duration: 1 }, 'start')
+  .to('.blue', { x: 600, duration: 1 }, 'start+=.5');
+              </code></pre>
+
+      <div class="example-container">
+        <div class="cube" data-cube="40"></div>
+        <div class="cube" data-cube="41"></div>
+        <div class="cube" data-cube="42">start</div>
+        <div class="cube" data-cube="43">start+=.5</div>
+      </div>
+
+      <p class="description">
+        Here we add label at the start of timeline, and set the start of yellow
+        csquare tween same as start, and skyblue scuare a half second relative
+        to start
+      </p>
+    </section>
+  </body>
+</html>

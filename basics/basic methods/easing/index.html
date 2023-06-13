@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Basic examples</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Easing</h1>
+      <p class="description">
+        You can control how fast at which point animation is runing by setting
+        ease property. Default value is <b>easeOut</b>
+      </p>
+
+      <p class="mt-1">
+        For every ease you can specify: <b>in</b>, <b>inOut</b> or default is
+        <b>out</b> values, to control how starts/ends. For example setting
+        bounce.out it bounces at the end, but setting bounce.in instead makes
+        tween bounce at start and move to the end
+      </p>
+
+      <p class="description">
+        You can check all ease types and visualise them using
+        <a href="https://greensock.com/docs/v3/Eases" target="_blank"
+          >gsap ease visualiser</a
+        >
+      </p>
+
+      <h2 class="subtitle">linear</h2>
+      <p class="description">
+        Linear or powe0 always go same speed. There is no point to set in or
+        inOut here because its linear anyway
+      </p>
+      <pre><code class="code">
+...
+ease: 'linear',
+ease: 'linear.in',
+ease: 'linear.inOut',
+ease: 'power0',
+...
+      </code></pre>
+      <div class="example-container container">
+        <div class="cube" data-cube="10"></div>
+        <div class="cube" data-cube="11">.in</div>
+        <div class="cube" data-cube="12">.inOut</div>
+        <div class="cube" data-cube="13">.power0</div>
+      </div>
+
+      <h2 class="subtitle">bounce</h2>
+      <p class="desctiption">
+        Bounce forces animation to bounce from edge couple times, decreasing
+        bounciness with every bounce
+      </p>
+      <pre><code class="code">
+  ...
+  ease: 'bounce',
+  ease: 'bounce.in',
+  ease: 'bounce.inOut',
+  ...
+        </code></pre>
+      <div class="example-container container">
+        <div class="cube" data-cube="20"></div>
+        <div class="cube" data-cube="21">.in</div>
+        <div class="cube" data-cube="22">.inOut</div>
+      </div>
+
+      <h2 class="subtitle">elastic</h2>
+      <p class="desctiption">
+        Elastic similar to bounce, but it go past animation end and returns
+        back.
+      </p>
+      <pre><code class="code">
+...
+ease: 'elastic',
+ease: 'elastic.in',
+ease: 'elastic.inOut',
+...
+              </code></pre>
+      <div class="example-container container">
+        <div class="cube" data-cube="30"></div>
+        <div class="cube" data-cube="31">.in</div>
+        <div class="cube" data-cube="32">.inOut</div>
+      </div>
+
+      <h2 class="subtitle">back</h2>
+      <p class="desctiption">
+        Back goes past animation end edge, and then backs. We can use it as a
+        function by passing number, which tells how far away we should move.
+      </p>
+      <pre><code class="code">
+...
+ease: 'back',
+ease: 'back.in',
+ease: 'back.inOut',
+ease: 'back(5)',
+ease: 'back.in(5)',
+ease: 'back.inOut(5)',
+...
+                      </code></pre>
+      <div class="example-container container">
+        <div class="cube" data-cube="40"></div>
+        <div class="cube" data-cube="41">.in</div>
+        <div class="cube" data-cube="42">.inOut</div>
+
+        <div class="cube" data-cube="43">(5)</div>
+        <div class="cube" data-cube="44">.in(5)</div>
+        <div class="cube" data-cube="45">.inOut(5)</div>
+      </div>
+    </section>
+  </body>
+</html>

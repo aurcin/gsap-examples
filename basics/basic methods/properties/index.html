@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Basic examples</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Properties</h1>
+      <p class="description">
+        We can basicly animate any properties. All transformation will be done
+        around element transform origin which is element center by default. To
+        set origin we use <b>transformOrigin</b> property. We can use
+        <b>percent</b>
+        values '10% 20%', <b>pixels</b> '10px 20px' or <b>keywords</b> 'left
+        bottom. The first value is always horizontal position, then vertical.
+        Transfor origin can be outside of element
+      </p>
+      <code class="code">
+        gsap.to('.cube', { duration: 3, rotation: 360, transformOrigin: '0%
+        100%' });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="4"></div>
+      </div>
+
+      <p class="description">
+        Here we rotate cube by 360 degree, but origin is bottom left corner
+      </p>
+
+      <h2 class="subtitle">xPercent, yPercent</h2>
+      <code class="code"
+        >gsap.to('.cube', { duration: 2, xPercent: 500 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="1"></div>
+      </div>
+      <p class="description">Moves cube by 500% of his width along x-axis</p>
+
+      <h2 class="subtitle">rotation, rotationX, rotationY</h2>
+      <code class="code"
+        >gsap.to('.cube', { duration: 3, rotation: 360 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="2"></div>
+      </div>
+      <p class="description">Rotates the cube by 360 degree</p>
+
+      <code class="code"
+        >gsap.to('.cube', { duration: 3, rotationX: 360 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="21"></div>
+      </div>
+      <p class="description">Rotates the cube by 360 deg on x axis</p>
+      <code class="code"
+        >gsap.to('.cube', { duration: 3, rotationY: 360 });</code
+      >
+      <div class="example-container">
+        <div class="cube" data-cube="22"></div>
+      </div>
+      <p class="description">Rotates the cube by 360deg on y axis</p>
+
+      <h2 class="subtitle">scale, scaleX, scaleY</h2>
+      <code class="code">gsap.to('.cube', { duration: 2, scale: 0.5 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="3"></div>
+      </div>
+      <p class="description">Scales the cube by half</p>
+
+      <code class="code">gsap.to('.cube', { duration: 2, scaleX: 0.5 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="31"></div>
+      </div>
+      <p class="description">Scales the cube by half on x axis</p>
+
+      <code class="code">gsap.to('.cube', { duration: 2, scaleY: 0.5 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="32"></div>
+      </div>
+      <p class="description">Scales the cube by half on y axis</p>
+
+      <h2 class="subtitle">skewX, skewY</h2>
+      <code class="code">gsap.to('.cube, { duration: 2, skewX: -45 });</code>
+      <div class="example-container">
+        <div class="cube" data-cube="5"></div>
+      </div>
+      <p class="description">Skews the cube by 45 deg on x axis</p>
+
+      <code class="code">gsap.to( '.cube', { duration: 2, skewY: -45 } );</code>
+      <div class="example-container">
+        <div class="cube" data-cube="51"></div>
+      </div>
+      <p class="description">Skews the cube by 45 deg on y axis</p>
+    </section>
+  </body>
+</html>

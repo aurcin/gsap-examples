@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Control methods</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Callbacks</h1>
+      <h2 class="subtitle">
+        onComplete, onStart, onUpdate, onRepeat, onReverseComplete
+      </h2>
+      <pre><code class="code">
+const timeline = gsap.timeline({
+...
+  onComplete: () => console.log('Completed'),
+  onStart: ...
+...
+});
+      </code></pre>
+
+      <div class="example-container">
+        <div class="cube" data-cube="1"></div>
+        <div class="cube" data-cube="11"></div>
+        <div class="cube" data-cube="12"></div>
+      </div>
+
+      <p class="description">
+        Each of those functiosn have console log added, to check when which
+        function is fired
+      </p>
+
+      <div class="button-container">
+        <button id="btn-play" class="btn">Resume</button>
+        <button id="btn-pause" class="btn">Pause</button>
+        <button id="btn-reverse" class="btn">Reverse</button>
+        <button id="btn-kill" class="btn">Kill</button>
+      </div>
+    </section>
+  </body>
+</html>
