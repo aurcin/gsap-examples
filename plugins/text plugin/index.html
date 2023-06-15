@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/TextPlugin.min.js"></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Text Plugin</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <pre><code class="code">
+gsap.to('.text', {
+  text: 'This is animated text paragraph',
+  duration: 2,
+  ease: 'power1.in',
+});
+      </code></pre>
+      <div class="example-container">
+        <p class="text" data-text="1"></p>
+      </div>
+      <p class="description">Very simple text animation example</p>
+
+      <pre><code class="code">
+gsap.from('.text', {
+  text: 'This text goes backwards',
+  duration: 2,
+  ease: 'power1',
+});
+      </code></pre>
+      <div class="example-container">
+        <p class="text" data-text="2"></p>
+      </div>
+      <p class="description">
+        changing direction to <b>from</b>, makes text disapear
+      </p>
+
+      <pre><code class="code">
+gsap.to('.text', {
+  text: 'This is yoyo tween',
+  duration: 3,
+  ease: 'none',
+  yoyo: true,
+});
+      </code></pre>
+      <div class="example-container">
+        <p class="text" data-text="3"></p>
+      </div>
+
+      <pre><code class="code">
+gsap.fromTo('.text',
+  { 
+    text: 'White',
+    color: 'white'
+  },
+  {
+    text: 'Green!',
+    color: 'green',
+    ease: 'none',
+    yoyo: true,
+    duration: 2,
+  }
+);
+      </code></pre>
+      <div class="example-container">
+        <p class="text" data-text="4"></p>
+      </div>
+      <p class="description">
+        Here we use fromTo to tween between two text and their color
+      </p>
+    </section>
+  </body>
+</html>

@@ -63,6 +63,12 @@ body {
   background-color: greenyellow;
 }
 
+.text {
+  color: greenyellow;
+  font-size: 2rem;
+  min-height: 38px;
+}
+
 .description {
   margin-top: 1em;
 }
