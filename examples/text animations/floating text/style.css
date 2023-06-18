@@ -1,0 +1,15 @@
+main {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.greeting {
+  font-size: 3em;
+  font-weight: bold;
+  color: rgb(31, 122, 179);
+
+  overflow: hidden;
+}

@@ -10,10 +10,9 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
     ></script>
 
-    <script src="https://unpkg.com/split-type"></script>
+    <script defer src="https://unpkg.com/split-type"></script>
     <script defer src="./main.js"></script>
     <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="./style.css" />
 
     <title>Text Plugin</title>
   </head>
@@ -33,6 +32,21 @@ gsap.from(text.chars, { opacity: 0, y: 20, ease: 'back(5)', stagger: 0.05 });
           This paragraph characters are going wild
         </p>
       </div>
+      <p class="description">
+        Breaking text into characters and animating them with gsap
+      </p>
+
+      <pre><code class="code">
+const text = new SplitType('.text', { types: 'words' });
+gsap.from(text.words, {opacity: 0, rotation: -90, ease: 'back', stagger: 0.2 });
+                </code></pre>
+
+      <div class="example-container">
+        <p class="text" data-text="2">And here words are going wild</p>
+      </div>
+      <p class="description">
+        Breaking text into words and animating them with gsap
+      </p>
     </section>
   </body>
 </html>
