@@ -10,3 +10,12 @@ gsap.from(text2.words, {
   ease: 'back',
   stagger: 0.2,
 });
+
+const text3 = new SplitType('.text[data-text="3"]', { types: 'lines' });
+gsap.from(text3.lines, {
+  opacity: 0,
+  rotationX: -120,
+  rotationY: 80,
+  stagger: 0.3,
+  transformOrigin: '50% 50% -150',
+});

@@ -13,6 +13,7 @@
     <script defer src="https://unpkg.com/split-type"></script>
     <script defer src="./main.js"></script>
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
 
     <title>Text Plugin</title>
   </head>
@@ -46,6 +47,30 @@ gsap.from(text.words, {opacity: 0, rotation: -90, ease: 'back', stagger: 0.2 });
       </div>
       <p class="description">
         Breaking text into words and animating them with gsap
+      </p>
+
+      <pre><code class="code">
+const text = new SplitType('.text', { types: 'lines' });
+gsap.from(text.lines, {
+  opacity: 0,
+  rotationX: -120,
+  rotationY: 80,
+  stagger: 0.3,
+  transformOrigin: '50% 50% -150',
+});
+      </code></pre>
+
+      <div class="example-container">
+        <p class="text" data-text="3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, aut
+          eum accusamus distinctio asperiores atque inventore reiciendis,
+          nostrum aperiam tempore quidem veniam quis magni quaerat earum
+          maiores? Officia, vel expedita.
+        </p>
+      </div>
+      <p class="description">
+        Here we rotating lines. We using 3 dimensions, so we have to set
+        perspective on parent container and transform origin for each dimension
       </p>
     </section>
   </body>
