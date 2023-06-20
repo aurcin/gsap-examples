@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    ></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Keyframes</title>
+  </head>
+  <body>
+    <section class="example-group">
+      <h1 class="title">Keyframes</h1>
+      <p class="description">
+        In gsap >3.9 we can use keyframes to animate multiple values at diferent
+        time position in a single tween
+      </p>
+      <h2 class="subtitle">percentage based keyframes</h2>
+
+      <pre><code class="code">
+timeline.to('.cube', {
+  keyframes: {
+    '15%': { y: 0 },
+    '50%': { y: -250, ease: 'power2.out' },
+    '85%': { y: 0, ease: 'bounce.out' },
+    '100%': { x: 630, ease: 'none' },
+  },
+  duration: 2,
+});
+      </code></pre>
+
+      <div class="example-container high">
+        <div class="cube ball" data-cube="1"></div>
+      </div>
+      <p class="description">
+        This should be intuitive. 100% we set x to 630, what means our cube is
+        moving 630px along x axis. Then we add some lifting from 15% of timeline
+        to 50%, and after moving box back to 0 on y with bounce ease.
+      </p>
+    </section>
+  </body>
+</html>
