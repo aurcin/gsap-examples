@@ -1,0 +1,41 @@
+main {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  --light: rgb(161, 161, 161);
+  --dark: rgb(10, 10, 10);
+}
+
+.list {
+  font-size: 3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--light);
+
+  overflow: hidden;
+}
+
+.list-item {
+  width: fit-content;
+  --position1: 0%;
+  --position2: 0%;
+  background: linear-gradient(
+    90deg,
+    var(--light),
+    var(--position1),
+    var(--light),
+    var(--position1),
+    var(--dark),
+    var(--position2),
+    var(--dark),
+    var(--position2),
+    var(--light)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
