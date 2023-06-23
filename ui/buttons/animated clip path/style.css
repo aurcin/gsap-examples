@@ -1,0 +1,35 @@
+.main {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  font-size: 2em;
+  padding: 0.5em 2em;
+  text-transform: uppercase;
+  font-weight: 900;
+
+  cursor: pointer;
+  background-color: rgb(255, 0, 140);
+  color: yellow;
+
+  position: relative;
+}
+
+.front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: yellow;
+  color: rgb(255, 0, 140);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
